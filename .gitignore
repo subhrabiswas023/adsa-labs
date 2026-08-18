@@ -1,0 +1,10 @@
+# IDE-specific
+.vscode/
+
+# Build artifacts
+build/
+*.exe
+*.suo
+
+# Planning works
+archive/
