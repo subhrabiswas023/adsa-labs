@@ -5,6 +5,9 @@
 
 using namespace std;
 
+constexpr int int_max = numeric_limits<int>::max();
+constexpr int int_min = numeric_limits<int>::min();
+
 int num_digits(int n)
 {
     int count = 0;
@@ -40,14 +43,14 @@ int reverse(int n)
 
     while (n)
     {
-        if ((result >= 0 && result > INT_MAX / 10) || (result < 0 && result < INT_MIN / 10))
+        if ((result >= 0 && result > int_max / 10) || (result < 0 && result < int_min / 10))
             throw int_overflow();
         result *= 10;
 
         d = div(n, 10);
         int digit = d.rem;
 
-        if ((result >= 0 && result > INT_MAX - digit) || (result < 0 && result < INT_MIN - digit))
+        if ((result >= 0 && result > int_max - digit) || (result < 0 && result < int_min - digit))
             throw int_overflow();
 
         result += digit;
